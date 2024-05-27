@@ -35,17 +35,13 @@ export const makeTextHead = ({
 
   list.push(
     tint(`mark`, rankTone) +
-      ' ' +
-      tint(`<`, H) +
-      tint(`${time}`, W) +
-      tint('>,', H) +
-      ' ' +
-      tint('rank', H) +
-      ' ' +
-      tint(rank, rankTone),
+      tint(' <', H) +
+      tint(`${note}`, WB) +
+      tint(`>`, H),
   )
+
   list.push(
-    '  ' + tint(`note <`, H) + tint(`${note}`, WB) + tint(`>`, H),
+    '  ' + tint(`time <`, H) + tint(`${time}`, W) + tint('>,', H),
   )
   if (showHost) {
     list.push('  ' + tint(`host ${host}`, H))
