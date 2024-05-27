@@ -26,7 +26,7 @@ npm i @termsurf/tail-tree
 ## Example
 
 <p align='center'>
-  <img src='https://github.com/termsurf/tail-tree.js/blob/make/view/tail.png?raw=true' width='400'/>
+  <img src='https://github.com/termsurf/tail-tree.js/blob/make/view/tail-tree.png?raw=true' width='520'/>
 </p>
 
 ## License

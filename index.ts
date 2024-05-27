@@ -13,6 +13,7 @@ export const makeTextHead = ({
   rank,
   host,
   note,
+  form,
   showHost = false,
   showForm = false,
 }: {
@@ -20,6 +21,7 @@ export const makeTextHead = ({
   rank: TailRank
   note: string
   host: string
+  form: string
   showHost?: boolean
   showForm?: boolean
 }) => {
@@ -49,7 +51,7 @@ export const makeTextHead = ({
     list.push('  ' + tint(`host ${host}`, H))
   }
   if (showForm) {
-    list.push('  ' + tint(`form ${host.replace(/_/g, '-')}`, H))
+    list.push('  ' + tint(`form ${form.replace(/_/g, '-')}`, H))
   }
   return list
 }
@@ -89,7 +91,15 @@ const makeText = ({
   const H = { tone: 'blackBright' }
 
   textList.push(
-    ...makeTextHead({ note, rank, time, host, showHost, showForm }),
+    ...makeTextHead({
+      note,
+      rank,
+      time,
+      host,
+      showHost,
+      showForm,
+      form,
+    }),
   )
 
   textList.push(...makeLinkHash(link, 1))

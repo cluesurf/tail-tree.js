@@ -26,7 +26,7 @@ Tail.base(
 )
 
 Tail.flow('default', '*', (tail: TailMesh) =>
-  console.log(makeText(tail)),
+  console.log(makeText({ ...tail, showHost: true })),
 )
 
 Tail.time(time => format(time, 'yyyy/MM/dd @ hh:mm:ss.SSSaaa'))
