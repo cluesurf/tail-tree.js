@@ -29,6 +29,13 @@ npm i @termsurf/tail-tree
   <img src='https://github.com/termsurf/tail-tree.js/blob/make/view/tail-tree.png?raw=true' width='520'/>
 </p>
 
+Here is an example of logs interwoven with errors using
+[`@termsurf/kink-tree`](https://github.com/termsurf/kink-tree.js):
+
+<p align='center'>
+  <img src='https://github.com/termsurf/tail-tree.js/blob/make/view/flow.png?raw=true' width='520'/>
+</p>
+
 ## License
 
 MIT

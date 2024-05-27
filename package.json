@@ -16,6 +16,8 @@
     "host": "pnpm make && npm publish --access=public"
   },
   "devDependencies": {
+    "@termsurf/kink": "^0.1.6",
+    "@termsurf/kink-tree": "^0.1.1",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.11.17",

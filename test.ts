@@ -4,7 +4,7 @@ import makeText from './index.js'
 
 const host = '@termsurf/tail-tree'
 
-type Base = {
+type TailBase = {
   execution_time: {
     take: {
       title: string
@@ -14,12 +14,12 @@ type Base = {
   }
 }
 
-type Name = keyof Base
+type TailName = keyof TailBase
 
 Tail.base(
   host,
   'execution_time',
-  (take: Base['execution_time']['take']) => ({
+  (take: TailBase['execution_time']['take']) => ({
     note: 'Execution time logged.',
     link: take,
   }),
@@ -31,14 +31,14 @@ Tail.flow('default', '*', (tail: TailMesh) =>
 
 Tail.time(time => format(time, 'yyyy/MM/dd @ hh:mm:ss.SSSaaa'))
 
-export default function tail<N extends Name>({
+export default function tail<N extends TailName>({
   rank = 'log',
   form,
   ...take
 }: {
   rank?: TailRank
   form: N
-} & Base[N]['take']) {
+} & TailBase[N]['take']) {
   Tail.mark(Tail.make({ host, form, rank, take }))
 }
 
