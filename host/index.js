@@ -11,7 +11,9 @@ export const makeTextHead = ({ time, rank, host, note, showHost = false, showFor
     const WB = { tone: 'white', bold: true };
     const H = { tone: 'blackBright' };
     const rankTone = RANK_TONE[rank];
-    list.push(tint(`mark <`, H) +
+    list.push(tint(`mark`, rankTone) +
+        ' ' +
+        tint(`<`, H) +
         tint(`${time}`, W) +
         tint('>,', H) +
         ' ' +
@@ -88,13 +90,13 @@ const makeText = ({ host, form, time, rank, note, link = {}, showHost = false, s
                             textList.push(...makeLinkSize(name, bind, move));
                         }
                         else if (Array.isArray(bind)) {
-                            textList.push(`${moveText}${tint(`${name}`, H)}`);
+                            textList.push(`${moveText}${tint(`bind ${name}`, H)}`);
                             bind.forEach(bind => {
                                 textList.push(...makeLinkBond(bondName, bind, move + 1));
                             });
                         }
                         else if (typeof bind === 'object') {
-                            textList.push(`${moveText}${tint(`${name}`, H)}`);
+                            textList.push(`${moveText}${tint(`bind ${name}`, H)}`);
                             textList.push(...makeLinkBond(bondName, bind, move + 1));
                         }
                     }
