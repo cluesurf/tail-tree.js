@@ -1,6 +1,6 @@
 import Tail, { TailMesh, TailRank } from '@termsurf/tail'
 import { format } from 'date-fns'
-import makeText from './index.js'
+import makeText, { TIME_FORM } from './index.js'
 
 const host = '@termsurf/tail-tree'
 
@@ -29,7 +29,7 @@ Tail.flow('default', '*', (tail: TailMesh) =>
   console.log(makeText({ ...tail, showHost: true })),
 )
 
-Tail.time(time => format(time, 'yyyy/MM/dd @ hh:mm:ss.SSSaaa'))
+Tail.time(time => format(time, TIME_FORM))
 
 export default function tail<N extends TailName>({
   rank = 'log',

@@ -1,6 +1,8 @@
 import { TailRank } from '@termsurf/tail'
 import tint from '@termsurf/tint-text'
 
+export const TIME_FORM = 'yyyy/MM/dd @ hh:mm:ss.SSSaaa'
+
 const RANK_TONE: Record<TailRank, { tone: string; bold?: boolean }> = {
   debug: { tone: 'green', bold: true },
   log: { tone: 'blue' },
